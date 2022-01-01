@@ -19,5 +19,5 @@ class ListStudentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Student
-        fields = ['id', 'name', 'school', 'parent', 'standard', 'location']
-        # fields = "__all__"
+        # fields = ['id', 'name', 'school', 'parent', 'standard', 'location']
+        fields = "__all__"

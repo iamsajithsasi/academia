@@ -1,5 +1,8 @@
 # academia
 
+sajith
+admin@123
+
 ### Project overview
 1. Multiple school registeration
 2. Individual school management

@@ -134,8 +134,8 @@ class Student(models.Model):
     standard = models.ForeignKey(Standard, on_delete=models.SET_NULL, null=True)
     location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
     acheivement = models.TextField(max_length=1250, blank=True, null=True)
-    certification = models.ForeignKey(Certification, blank=True, on_delete=models.SET_NULL, null=True)
-    goal = models.ForeignKey(Goal, on_delete=models.SET_NULL, blank=True, null=True)
+    certification = models.ManyToManyField(Certification, related_name='student_certification')
+    goal = models.ManyToManyField(Goal, related_name='student_goal')
 
     def __str__(self):
         return self.name + ", " + str(self.age) + ", " + self.sex
