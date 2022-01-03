@@ -2,9 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # rest framework
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
 
 # models and serializers
 from .serializers import ListStudentSerializer, ListParentSerializer
@@ -29,7 +28,6 @@ def index(request):
 
 # 1: lists
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def StudentList(request):
     list = Student.objects.all()
     # print("student ", Student.objects.get(id=id))
